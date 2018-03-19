@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Vue Life Cycle</title>
+    </head>
+    <body>
+        <div id="app">
+            {{message}}
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+        <script>
+            // 새로운 인스턴스 생성
+            new Vue ({
+                el: "#app",
+                data :{
+                    message: "Hello, Vue.js!"
+                },
+                beforeCreate: function(){
+                    //인스턴스 생성 후 가장 처음으로 시작
+                    console.log("beforeCreate");
+                },
+                created: function(){
+                    //beforeCreate 다음으로 실행, 인스턴스가 아직 화면에 붙기 전
+                    console.log("created");
+                },
+                mounted: function(){
+                    //인스턴스 부착 후 바로 실행
+                    console.log("mounted");
+                    this.message = "Bye, Vue.js!";
+                },
+                updated: function(){
+                    //데이터 변경 시 실행
+                    console.log("updated");
+                }
+            });
+        </script>
+
+    </body>
+</html>
+    
