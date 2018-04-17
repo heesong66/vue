@@ -1,0 +1,35 @@
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event Handling</title>
+</head>
+
+<body>
+    <div id="app">
+        <button v-on:click="clickBtn">alert</button>
+        <button v-on:click="clickBtn2(10)">parameter</button>
+        <button v-on:click="clickBtn3">console</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            methods: {
+                clickBtn: function() {
+                    alert("clicked");
+                },
+                clickBtn2: function(num) {
+                    alert("clicked param:" + num);
+                },
+                clickBtn3: function(event) {
+                    console.log(event);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
